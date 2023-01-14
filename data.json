@@ -1,0 +1,16 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "title": "JavaScript",
+      "description": "used for web development",
+      "price": 250
+    },
+    {
+      "id": "45ac04cc-fbed-4451-98c1-ef346e858364",
+      "title": "React",
+      "description": "UI development",
+      "price": "300"
+    }
+  ]
+}
