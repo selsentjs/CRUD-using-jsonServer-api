@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import Home from "./CRUD/Home";
+import Home from "./CRUD-API/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Add from "./CRUD/Add";
-import Edit from "./CRUD/Edit";
-import View from "./CRUD/View";
+import Add from "./CRUD-API/Add";
+import Edit from "./CRUD-API/Edit";
+import View from "./CRUD-API/View";
 
 function App() {
   const [data, setData] = useState([]);

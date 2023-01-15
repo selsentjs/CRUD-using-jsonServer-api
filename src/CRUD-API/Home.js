@@ -16,9 +16,12 @@ const Home = ({ data, setData }) => {
 
   // delete data
   const deleteData = async (id) => {
-    const response = await axios.delete(`http://localhost:8000/data/${id}`);
     if (window.confirm("Are you sure want to delete this record?")) {
+      const response = await axios.delete(`http://localhost:8000/data/${id}`);
+
       setData(response.data);
+      getAllData();
+    } else {
       getAllData();
     }
   };
