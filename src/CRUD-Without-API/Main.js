@@ -12,8 +12,15 @@ const Main = () => {
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
 
-  // ============ view data ===========================
+  //edit
+  const [isEdit, setIsEdit] = useState(false);
+  const [editID, setEditID] = useState(null);
+
+  //view
   const [displayData, setDisplayData] = useState([]);
+
+  // ============ view data ===========================
+ 
   const viewData = (item) => {
     setDisplayData(item);
   };
@@ -33,6 +40,8 @@ const Main = () => {
                 setDescription={setDescription}
                 setPrice={setPrice}
                 viewData={viewData}
+                setEditID={setEditID}
+                setIsEdit={setIsEdit}
               />
             }
           />
@@ -51,7 +60,24 @@ const Main = () => {
               />
             }
           />
-          <Route path="/edit/:id" element={<Edit />} />
+          <Route
+            path="/edit/:id"
+            element={
+              <Edit
+                data={data}
+                setData={setData}
+                title={title}
+                setTitle={setTitle}
+                description={description}
+                setDescription={setDescription}
+                price={price}
+                setPrice={setPrice}
+                editID={editID}
+                setEditID={setEditID}
+                setIsEdit={setIsEdit}
+              />
+            }
+          />
           <Route
             path="/view/:id"
             element={

@@ -1,7 +1,16 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const Home = ({ data, setData, setTitle, setDescription, setPrice,viewData }) => {
+const Home = ({
+  data,
+  setData,
+  setTitle,
+  setDescription,
+  setPrice,
+  viewData,
+  setEditID,
+  setIsEdit,
+}) => {
   // ================== delete data ==========================
   const deleteData = (id) => {
     const result = data.filter((item) => {
@@ -13,7 +22,21 @@ const Home = ({ data, setData, setTitle, setDescription, setPrice,viewData }) =>
 
   //==============================================================
 
-  
+  // ========  getSingleData =====================================
+
+  const getSingleData = (id) => {
+    const result = data?.find((item) => {
+      return item.id === id;
+    });
+    setIsEdit(true);
+    setEditID(id);
+    setTitle(result.title);
+    setDescription(result.description);
+    setPrice(result.price);
+  };
+
+  //=================================================================
+
   return (
     <div>
       <NavLink to="/add">
@@ -41,7 +64,9 @@ const Home = ({ data, setData, setTitle, setDescription, setPrice,viewData }) =>
                     <td>{item.price}</td>
                     <td>
                       <NavLink to={`/edit/${item.id}`}>
-                        <button>Edit</button>
+                        <button onClick={() => getSingleData(item.id)}>
+                          Edit
+                        </button>
                       </NavLink>
                       <button onClick={() => deleteData(item.id)}>
                         Delete
