@@ -7,10 +7,10 @@
       "price": 250
     },
     {
-      "id": "45ac04cc-fbed-4451-98c1-ef346e858364",
-      "title": "React",
+      "title": "React new",
       "description": "UI development",
-      "price": "300"
+      "price": "300",
+      "id": "45ac04cc-fbed-4451-98c1-ef346e858364"
     }
   ]
 }

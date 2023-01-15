@@ -1,65 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
-import Home from "./CRUD-API/Home";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Add from "./CRUD-API/Add";
-import Edit from "./CRUD-API/Edit";
-import View from "./CRUD-API/View";
+
+import Main from "./CRUD-Without-API/Main";
+import MainFile from "./CRUD-API/MainFile";
 
 function App() {
-  const [data, setData] = useState([]);
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [price, setPrice] = useState("");
   return (
     <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home data={data} setData={setData} />} />
-          <Route
-            path="/add"
-            element={
-              <Add
-                data={data}
-                setData={setData}
-                title={title}
-                setTitle={setTitle}
-                description={description}
-                setDescription={setDescription}
-                price={price}
-                setPrice={setPrice}
-              />
-            }
-          />
-          <Route
-            path="/edit/:id"
-            element={
-              <Edit
-                data={data}
-                setData={setData}
-                title={title}
-                setTitle={setTitle}
-                description={description}
-                setDescription={setDescription}
-                price={price}
-                setPrice={setPrice}
-              />
-            }
-          />
-          <Route
-            path="/view/:id"
-            element={
-              <View
-                data={data}
-                setData={setData}
-                setTitle={setTitle}
-                setDescription={setDescription}
-                setPrice={setPrice}
-              />
-            }
-          />
-        </Routes>
-      </BrowserRouter>
+      <MainFile />
+      <br />
+      <br />
+      <h1>CRUD without api </h1>
+      <Main />
     </div>
   );
 }
