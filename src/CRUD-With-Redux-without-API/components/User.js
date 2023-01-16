@@ -38,6 +38,8 @@ const User = () => {
 
   const updateData = () => {
     dispatch(updateUser({ id: editID.id, name, email }));
+    setName("");
+    setEmail("");
     setIsEdit(false);
   };
 
